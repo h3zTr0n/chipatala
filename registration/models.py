@@ -21,18 +21,18 @@ class Admin(models.Model):
     fName = models.CharField('First Name', max_length=20, default=None)
     lName = models.CharField('Last Name', max_length=20, default=None)
     email = models.CharField('Email', primary_key=True, max_length=50, default=None)
-    
+
     hLabels = {
-        ('Rochester General Hospital', 'Rochester General Hospital'),
-        ('Rochester Private Hospital', 'Rochester Private Hospital'),
-        ('Cleveland Clinic', 'Cleveland Clinic'),
-        ('University of Pittsburgh Medical Center', 'University of Pittsburgh Medical Center'),
-        ('UCLA Medical Center', 'UCLA Medical Center')
+        ('Lusaka Trust Hospital', 'Lusaka Trust Hospital'),
+        ('Beit CURE Hospital of Zambia', 'Beit CURE Hospital of Zambia'),
+        ('Lusaka Eye Hospital', 'Lusaka Eye Hospital'),
+        ('Victoria Hospital', 'Victoria Hospital'),
+        ('University Teaching Hospital', 'University Teaching Hospital')
     }
     hospital = models.CharField('Hospital', max_length=50, choices=hLabels, default='Rochester General Hospital')
 
     objects = AdminManager()
-    
+
     def __str__(self):
         return self.email
 
@@ -55,21 +55,20 @@ class Doctor(models.Model):
     fName = models.CharField('First Name', max_length=20, default=None)
     lName = models.CharField('Last Name', max_length=20, default=None)
     email = models.CharField('Email', primary_key=True, max_length=50, default=None)
-    
+
     hLabels = {
-        ('Rochester General Hospital', 'Rochester General Hospital'),
-        ('Rochester Private Hospital', 'Rochester Private Hospital'),
-        ('Cleveland Clinic', 'Cleveland Clinic'),
-        ('University of Pittsburgh Medical Center', 'University of Pittsburgh Medical Center'),
-        ('UCLA Medical Center', 'UCLA Medical Center')
+        ('Lusaka Trust Hospital', 'Lusaka Trust Hospital'),
+        ('Beit CURE Hospital of Zambia', 'Beit CURE Hospital of Zambia'),
+        ('Lusaka Eye Hospital', 'Lusaka Eye Hospital'),
+        ('Victoria Hospital', 'Victoria Hospital'),
+        ('University Teaching Hospital', 'University Teaching Hospital')
     }
     hospital = models.CharField('Hospital', max_length=50, choices=hLabels, default='Rochester General Hospital')
-    
+
     objects = DoctorManager()
-    
+
     def __str__(self):
         return self.email
-
 
 """
 Nurse account creation
@@ -89,18 +88,18 @@ class Nurse(models.Model):
     fName = models.CharField('First Name', max_length=20, default=None)
     lName = models.CharField('Last Name', max_length=20, default=None)
     email = models.CharField('Email', primary_key=True, max_length=50, default=None)
-    
+
     hLabels = {
-        ('Rochester General Hospital', 'Rochester General Hospital'),
-        ('Rochester Private Hospital', 'Rochester Private Hospital'),
-        ('Cleveland Clinic', 'Cleveland Clinic'),
-        ('University of Pittsburgh Medical Center', 'University of Pittsburgh Medical Center'),
-        ('UCLA Medical Center', 'UCLA Medical Center')
+        ('Lusaka Trust Hospital', 'Lusaka Trust Hospital'),
+        ('Beit CURE Hospital of Zambia', 'Beit CURE Hospital of Zambia'),
+        ('Lusaka Eye Hospital', 'Lusaka Eye Hospital'),
+        ('Victoria Hospital', 'Victoria Hospital'),
+        ('University Teaching Hospital', 'University Teaching Hospital')
     }
     hospital = models.CharField('Hospital', max_length=50, choices=hLabels, default='Rochester General Hospital')
-    
+
     objects = NurseManager()
-    
+
     def __str__(self):
         return self.email
 
@@ -125,19 +124,19 @@ class Patient(models.Model):
     fName = models.CharField('First Name', max_length=20, default=None)
     lName = models.CharField('Last Name', max_length=20, default=None)
     email = models.CharField('Email', primary_key=True, max_length=50, default=None)
-    
+
     hLabels = {
-        ('Rochester General Hospital', 'Rochester General Hospital'),
-        ('Rochester Private Hospital', 'Rochester Private Hospital'),
-        ('Cleveland Clinic', 'Cleveland Clinic'),
-        ('University of Pittsburgh Medical Center', 'University of Pittsburgh Medical Center'),
-        ('UCLA Medical Center', 'UCLA Medical Center')
+        ('Lusaka Trust Hospital', 'Lusaka Trust Hospital'),
+        ('Beit CURE Hospital of Zambia', 'Beit CURE Hospital of Zambia'),
+        ('Lusaka Eye Hospital', 'Lusaka Eye Hospital'),
+        ('Victoria Hospital', 'Victoria Hospital'),
+        ('University Teaching Hospital', 'University Teaching Hospital')
     }
     prefHospital = models.CharField('Preferred Hospital', max_length=50, choices=hLabels, default='Rochester General Hospital')
     currHospital = models.CharField('Current Hospital', max_length=50, choices=hLabels, default='Not in hospital')
-    
+
     #medical information
-    
+
     gLabels = {
         ('Male', 'Male'),
         ('Female', 'Female'),
@@ -154,9 +153,9 @@ class Patient(models.Model):
         ('O', 'O'),
     }
     bloodtype = models.CharField('Blood Type', max_length=5, choices=bLabels, default='A')
-    
+
     # emergency contact information
-    
+
     eName = models.CharField('Emergency Contact Name', max_length=60, default="Name")
     ePhone = models.CharField('Emergency Contact Phone Number', max_length=12, default="000-000-0000")
 
@@ -164,3 +163,7 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.email
+
+
+"I'm not the perfect boyfriend, ill yell at you, get jealous, be stubbon, over \
+think, but i'll love better than anyone"

@@ -215,7 +215,7 @@ def Delete_Prescription(request, p_id):
         Message.objects.createMessage(user, recipient, "Removed Prescription", ("Your prescription for " + str(p) +
                                                                                 " has been removed. If you believe "
                                                                                 "this has been in error, feel free "
-                                                                                "to contact me through the HealthNet "
+                                                                                "to contact me through the chipatala "
                                                                                 "System"))
         p.delete()
         list = Prescription.objects.filter(p_doctor=doctor).filter(

@@ -9,7 +9,7 @@ logger = logging.getLogger('system')
 
 class AppointmentManager( models.Manager ):
     def scheduleAppointment( self, a_doctor, a_patient, a_title, a_description, a_date, a_starttime, a_endtime ):
-        appointment = self.create( 
+        appointment = self.create(
             a_doctor=a_doctor,
             a_patient=a_patient,
             a_title=a_title,
@@ -20,12 +20,12 @@ class AppointmentManager( models.Manager ):
         )
         logger.info( "New Appointment: " + str(appointment) )
         return appointment
-    
+
 
 class Appointment( models.Model ):
-    a_doctor      = models.ForeignKey( Doctor, related_name='a_doctor', default=None )
-    a_patient     = models.ForeignKey( Patient, related_name='a_patient', default=None )
-    a_title       = models.CharField( 'Title', max_length=200 )
+    a_doctor      = models.ForeignKey(Doctor, related_name='a_doctor', default=None )
+    a_patient     = models.ForeignKey(Patient, related_name='a_patient', default=None )
+    a_title       = models.CharField("Title", max_length=200 )
     a_description = models.CharField( 'Description', max_length=1000 )
     a_date        = models.DateField( 'date' )
     a_starttime   = models.TimeField( 'start time' )
